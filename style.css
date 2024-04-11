@@ -1,0 +1,340 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-size */
+  font-size: 62.5%;
+}
+
+:root {
+  --bc-gray: #F9F4FB;
+  --bc-blue: linear-gradient(96.21deg, #343193 0%, #302C63 99.68%);
+
+  --tc-purple: #B52184;
+  --tc-blueBlack: #312D64;
+  --tc-white: #FFFFFF;
+
+  --ts-h1: clamp(3.2rem, 3vw + 1.8rem, 5.9rem);
+  --ts-h2: 3rem;
+  --ts-h3: 3.2rem;
+  --ts-p-header: clamp(2rem, 0.1vw + 1rem, 3.2rem);
+  --ts-p-main: clamp(1.6rem, 0.5vw + 0.5rem, 1.9rem);
+  --ts-botton: 1.4rem;
+  
+  --lh-h1: clamp(4rem, 3vw + 1rem, 7.3rem);
+  --lh-h2: 3.6rem;
+  --lh-h3: 4rem;
+  --lh-p-header: clamp(2.5rem, 0.1vw + 1rem, 4rem);
+  --lh-p-main: clamp(2rem, 0.5vw + 1rem, 2.4rem);
+
+  font-family: 'Mulish', sans-serif;
+}
+
+body {
+  min-width: 43rem;
+  background: var(--bc-gray);
+  font-family: 'Mulish', sans-serif;
+}
+
+img {
+  object-fit: contain;
+  width: 100%;
+}
+
+header {
+  height: 67.9rem;
+  width: 100%;
+}
+
+.header-img {
+  height: 36.4rem;
+  object-fit: contain;
+  filter: drop-shadow(30px 30px 14px black);
+  animation: updown 1s backwards cubic-bezier(0.4, 0, 1, 1);
+}
+
+.header-img img:hover {
+  scale: 1.1;
+  filter: contrast(1.2);
+  transition: 1s;
+}
+
+header, .header-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: var(--bc-gray);
+}
+
+header h1 {
+  font-size: var(--ts-h1);
+  line-height: var(--lh-h1);
+  color: var(--tc-purple);
+  margin: 1.7rem auto 0.5rem;
+}
+
+header p {
+  font-size: var(--ts-p-header);
+  line-height: var(--lh-p-header);
+  color: var(--tc-blueBlack);
+  margin-bottom: 3.5rem;
+}
+
+.header-wrapper img {
+  width: 5.8rem;
+  height: 10.5rem;
+}
+
+.header-wrapper img:hover {
+  filter: drop-shadow(30px 30px 14px black);
+  scale: 1.1;
+}
+
+.main-wrapper {
+  display: grid;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--bc-blue);
+  padding: 5.2rem;
+  gap: 5rem;
+
+  width: 100%;
+
+  animation: leftright 3s backwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.main-wrapper .cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 2.64rem;
+
+  width: clamp(35.2rem, 90rem);
+  height: clamp(33.8rem, 44.8rem);
+
+  background: var(--bc-gray);
+  box-shadow: 2rem 4rem 1.5rem rgba(0, 0, 0, 0.25);
+  border-radius: 2rem;
+
+  animation: leftright 3s backwards cubic-bezier(0.95, 82, 0.165, 2);
+  animation-delay: 1s;
+}
+
+.cards img {
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(16px 20px 25px black);
+}
+
+.cards img:hover {
+  scale: 1.2;
+  filter: contrast(1.5);
+  filter: drop-shadow(20px 24px 28px black);
+}
+
+.cards h2 {
+  font-size: var(--ts-h2);
+  line-height: var(--lh-h2);
+
+  margin: 3rem 0 2rem;
+  
+  color: var(--tc-purple); 
+}
+
+.cards p {
+  font-weight: 600;
+  font-size: var(--ts-p-main);
+  line-height: var(--lh-p-main);
+  
+  color: var(--tc-blueBlack);
+}
+
+main .footer-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 7.8rem 4rem 6.5rem;
+}
+
+.footer-wrapper .my-form {
+  height: 42.2rem;
+  width: 50rem;
+
+  display: grid;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+button, input, fieldset, textarea {
+  border: none;
+  background: none;
+  font-family: 'Mulish' sans-serif;
+}
+
+.my-form h3 {
+  font-size: var(--ts-h3);
+  line-height: var(--lh-h3);
+  
+  color: var(--tc-purple);
+
+  margin-bottom: 4.5rem;
+  background: var(--bc-gray);
+}
+
+.input-wrapper {
+  margin-bottom: 2.4rem;
+}
+
+.my-form input, textarea {
+  width: 100%;
+  padding: 1.2rem 5rem 1.6rem;
+  
+  border: 0.15rem solid var(--tc-blueBlack);
+  border-radius: 1.6rem;
+
+  font-weight: 600;
+  font-size: 1.6rem;
+
+  color: var(--tc-blueBlack);
+}
+
+.my-form textarea {
+  padding-left: 1.6rem;
+}
+
+.my-form textarea {
+  height: 12.6rem;
+}
+
+.my-form input::placeholder,
+.my-form textarea::placeholder {
+  font-size: 1.6rem;
+  font-weight: 600;
+  opacity: 0.8;  
+  color: var(--tc-blueBlack);
+}
+
+#name {
+  background: url(./images/person-email.svg) no-repeat scroll 1.4rem 1.2rem;
+}
+
+#email {
+  background: url(./images/@.svg) no-repeat scroll 1.4rem 1.2rem;
+}
+
+.my-form button {
+  width: 15.1rem;
+  height: 4.5rem;
+  
+  background: var(--bc-blue);
+  border-radius: 1.6rem;
+
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  
+  color: #FFFFFF;  
+}
+
+.my-form button:hover {
+  filter: brightness(1.2);
+  scale: 1.1;
+  background: linear-gradient(96.21deg, #443efd 0%, #0b037c 99.68%);
+}
+
+footer {
+  display: grid;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.6rem;
+  
+  height: 7.8rem;
+  
+  background: linear-gradient(96.21deg, #343193 0%, #302C63 99.68%)
+}
+
+footer p {
+  font-size: var(--lh-p-main);
+  line-height: 2.4rem;
+  
+  color: var(--tc-white);
+}
+
+footer:hover {
+  filter: brightness(1.2);
+  background: linear-gradient(96.21deg, #443efd 0%, #0b037c 99.68%);
+}
+
+@keyframes updown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-1px);
+  }
+}
+
+@keyframes leftright {
+  0% {
+    opacity: 0;
+    transform: translateX(-400px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-1px);
+  }
+}
+
+@media (min-width: 1000px) {
+  header {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+  .header-img {
+    width: 72rem;
+    height: 5%;
+    margin: 0 3rem 10rem 0;
+  }
+
+  .header-wrapper {
+    align-items: flex-start;
+    margin: 18rem 0 0 6rem;
+  }
+
+  .header-wrapper p {
+    margin-bottom: 18rem;
+  }
+
+  .footer-wrapper{
+    background: url(./images/estrelinhas.svg) no-repeat right;
+  }
+
+  .footer-wrapper .my-form {
+    width: 65rem;
+  }
+}
+
+@media (min-width: 1250px) {
+  .header-wrapper {
+    animation: leftright 3s backwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .main-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 6.4rem;
+    width: 100%;
+  }
+
+  .cards {
+    width: 36.6rem;
+    height: 44.8rem;
+  }
+}
